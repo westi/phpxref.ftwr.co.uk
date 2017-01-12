@@ -39,3 +39,13 @@ else
 fi
 [ ! -d html/buddypress  ] && mkdir html/buddypress
 phpxref/phpxref.pl -c buddypress.cfg
+
+#GlotPress
+if [ -d working/glotpress ]
+then
+	svn up working/glotpress
+else
+	svn co https://github.com/GlotPress/GlotPress-WP/trunk working/glotpress working/glotpress
+fi
+[ ! -d html/glotpress  ] && mkdir html/glotpress
+phpxref/phpxref.pl -c glotpress.cfg
